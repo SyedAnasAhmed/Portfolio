@@ -38,7 +38,7 @@ const Footer = () => {
             >
               {profile.id===1 ? 
               <Link href={"https://github.com/Syedanasahmed"} target="_blank " >
-                <Image src={profile.img} width={20} height={20} alt="" />
+                <Image  src={profile.img} width={20} height={20} alt="" />
               </Link>
               : profile.id===3 ? 
               <Link href={"https://www.linkedin.com/in/syed-anas-ahmed-0211aa249"} target="_blank " >

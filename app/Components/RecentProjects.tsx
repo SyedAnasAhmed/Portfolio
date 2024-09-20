@@ -26,9 +26,10 @@ const RecentProjects = () => {
                   className="relative w-full h-full overflow-hidden lg:rounded-3xl"
                   style={{ backgroundColor: "#13162D" }}
                 >
-                  <Image src="/bg.png" alt="bgimg" />
+                  <Image width={0} height={0} src="/bg.png" alt="bgimg" />
                 </div>
                 <Image
+                  fill
                   src={item.img}
                   alt="cover"
                   className="z-10 absolute bottom-0"
@@ -54,12 +55,12 @@ const RecentProjects = () => {
                   {item.iconLists.map((icon, index) => (
                     <div
                       key={index}
-                      className="border border-white/[.2] rounded-full bg-black lg:w-10 lg:h-10 w-8 h-8 flex justify-center items-center"
+                      className="border relative border-white/[.2] rounded-full bg-black lg:w-10 lg:h-10 w-8 h-8 flex justify-center items-center"
                       style={{
                         transform: `translateX(-${5 * index + 2}px)`,
                       }}
                     >
-                      <Image src={icon} alt="icon5" className="p-2" />
+                      <Image fill src={icon} alt="icon5" className="p-2" />
                     </div>
                   ))}
                 </div>

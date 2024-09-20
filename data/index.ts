@@ -101,7 +101,7 @@ export const projects = [
       "/re.svg",
       "/mui.png",
       "/js.png",
-      " /node.png",
+      "/node.png",
       "/mongologo.png",
     ],
     link: "https://github.com/SyedAnasAhmed/task-MERN.git",
@@ -188,7 +188,7 @@ export const workExperience = [
     title: "Dawood UET         2021-2025",
     desc: "Final year BSCS undergraduate student at Dawood UET.",
     className: "md:col-span-2",
-    thumbnail: "/duetlogo (2).png",
+    thumbnail: "/exp2.svg",
   },
   // {
   //   id: 2,
