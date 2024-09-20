@@ -3,6 +3,7 @@ import MagicButton from "./Ui/MagicButton";
 import { FaLocationArrow } from "react-icons/fa";
 import { socialMedia } from "@/data";
 import Link from "next/link";
+import Image from "next/image";
 
 const Footer = () => {
   return (
@@ -37,15 +38,15 @@ const Footer = () => {
             >
               {profile.id===1 ? 
               <Link href={"https://github.com/Syedanasahmed"} target="_blank " >
-                <img src={profile.img} width={20} height={20} alt="" />
+                <Image src={profile.img} width={20} height={20} alt="" />
               </Link>
               : profile.id===3 ? 
               <Link href={"https://www.linkedin.com/in/syed-anas-ahmed-0211aa249"} target="_blank " >
-                <img src={profile.img} width={20} height={20} alt="" />
+                <Image src={profile.img} width={20} height={20} alt="" />
               </Link> 
               :
               <Link href={"https://www.x.com/AnasAhm78817182"} target="_blank">
-                <img src={profile.img} width={20} height={20} alt="" />
+                <Image src={profile.img} width={20} height={20} alt="" />
               </Link> }
               
             
