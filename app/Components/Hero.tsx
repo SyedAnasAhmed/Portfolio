@@ -27,17 +27,20 @@ const Hero = () => {
           <h2 className="uppercase tracking-widest text-xs text-center text-blue-100 max-w-80:">
             Dynamic Web Magic with Next.js
           </h2>
+
           <TextGenerateEffect
-            words="Transforming concepts into seamless experiences"
+            words="Transforming concepts into seamless experiences."
             className="text-center text-[40px] md:text-5xl lg:text-5xl"
           />
+
           <p className="text-center md:tracking-wider mb-4 text-sm md:text-lg lg:text-2xl">
-            Hi! I&apos;m Anas, a Next.js Developer based in Pakistan.
+            Hi! I&apos;m Anas, a Software Engineer based in Pakistan.
           </p>
 
-          <a href="/about">
-            <MagicButton title="Show my work"
-              icon={<FaLocationArrow/>}
+          <a href="#projects">
+            <MagicButton
+              title="Show my work"
+              icon={<FaLocationArrow />}
               position="right"
             />
           </a>
