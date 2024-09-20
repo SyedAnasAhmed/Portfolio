@@ -334,12 +334,12 @@ export const CanvasRevealEffect = ({
           colors={colors}
           dotSize={dotSize}
           opacities={opacities}
-          shader={`
-              float animation_speed_factor = ${animationSpeed.toFixed(1)};
-              float intro_offset = distance(u_resolution / 2.0 / u_total_size, st2) * 0.01 + (random(st2) * 0.15);
-              opacity *= step(intro_offset, u_time * animation_speed_factor);
-              opacity *= clamp((1.0 - step(intro_offset + 0.1, u_time * animation_speed_factor)) * 1.25, 1.0, 1.25);
-            `}
+          // shader={`
+          //     float animation_speed_factor = ${animationSpeed.toFixed(1)};
+          //     float intro_offset = distance(u_resolution / 2.0 / u_total_size, st2) * 0.01 + (random(st2) * 0.15);
+          //     opacity *= step(intro_offset, u_time * animation_speed_factor);
+          //     opacity *= clamp((1.0 - step(intro_offset + 0.1, u_time * animation_speed_factor)) * 1.25, 1.0, 1.25);
+          //   `}
           center={["x", "y"]}
         />
       </div>
@@ -356,7 +356,7 @@ interface DotMatrixProps {
   opacities?: number[];
   totalSize?: number;
   dotSize?: number;
-  shader?: string;
+  // shader?: string;
   center?: ("x" | "y")[];
 }
 
@@ -365,7 +365,7 @@ const DotMatrix: React.FC<DotMatrixProps> = ({
   opacities = [0.04, 0.08, 0.14],
   totalSize = 4,
   dotSize = 2,
-  shader = "",
+  // shader = "",
   center = ["x", "y"],
 }) => {
   const uniforms = useMemo(() => {
