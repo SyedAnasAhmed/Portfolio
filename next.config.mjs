@@ -18,7 +18,7 @@ sentryUrl: "https://sentry.io/",
 silent: !process.env.CI,
 
 // For all available options, see:
-// https://docs.sentry.io/platforms/javascript/guides/nextjs/manual-setup/
+// https://docs..io/platforms/javascript/guides/nextjs/manual-setup/
 
 // Upload a larger set of source maps for prettier stack traces (increases build time)
 widenClientFileUpload: true,

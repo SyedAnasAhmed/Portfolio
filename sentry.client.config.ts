@@ -4,24 +4,46 @@
 
 import * as Sentry from "@sentry/nextjs";
 
-Sentry.init({
-  dsn: process.env.NEXT_PUBLIC_SENTRY_DSN,
+if (process.env.SENTRY_DSN) {
+  Sentry.init({
+    dsn: process.env.SENTRY_DSN,
+    // Other options...
+    integrations: [
+      Sentry.feedbackIntegration({
+        // Additional SDK configuration goes in here, for example:
+        colorScheme: "dark",
+      }),
+      Sentry.replayIntegration({
+        // Additional Replay configuration goes in here, for example:
+        maskAllText: true,
+        blockAllMedia: true,
+      }),
+    ],
 
-  integrations: [
-    Sentry.feedbackIntegration({
-      // Additional SDK configuration goes in here, for example:
-      colorScheme: "dark",
-    }),
-    Sentry.replayIntegration({
-      // Additional Replay configuration goes in here, for example:
-      maskAllText: true,
-      blockAllMedia: true,
-    }),
-  ],
+    // Define how likely traces are sampled. Adjust this value in production, or use tracesSampler for greater control.
+    tracesSampleRate: 1,
 
-  // Define how likely traces are sampled. Adjust this value in production, or use tracesSampler for greater control.
-  tracesSampleRate: 1,
+    // Setting this option to true will print useful information to the console while you're setting up Sentry.
+    debug: false,
+  });
+} else {
+  console.warn("Sentry DSN is not defined.");
 
-  // Setting this option to true will print useful information to the console while you're setting up Sentry.
-  debug: false,
-});
+  // integrations: [
+  //   Sentry.feedbackIntegration({
+  //     // Additional SDK configuration goes in here, for example:
+  //     colorScheme: "dark",
+  //   }),
+  //   Sentry.replayIntegration({
+  //     // Additional Replay configuration goes in here, for example:
+  //     maskAllText: true,
+  //     blockAllMedia: true,
+  //   }),
+  // ],
+
+  // // Define how likely traces are sampled. Adjust this value in production, or use tracesSampler for greater control.
+  // tracesSampleRate: 1,
+
+  // // Setting this option to true will print useful information to the console while you're setting up Sentry.
+  // debug: false,
+}
