@@ -4,9 +4,8 @@
 
 import * as Sentry from "@sentry/nextjs";
 
-if (process.env.NEXT_PUBLIC_SENTRY_DSN) {
   Sentry.init({
-    dsn: process.env.NEXT_PUBLIC_SENTRY_DSN,
+    dsn: "https://a65f258d617836b45fc265609d40fcf7@o4507978937925632.ingest.us.sentry.io/4507978941923328",
     // Other options...
     integrations: [
       Sentry.feedbackIntegration({
@@ -26,8 +25,6 @@ if (process.env.NEXT_PUBLIC_SENTRY_DSN) {
     // Setting this option to true will print useful information to the console while you're setting up Sentry.
     debug: false,
   });
-} else {
-  console.warn("Sentry DSN is not defined.");
 
   // integrations: [
   //   Sentry.feedbackIntegration({
@@ -46,4 +43,3 @@ if (process.env.NEXT_PUBLIC_SENTRY_DSN) {
 
   // // Setting this option to true will print useful information to the console while you're setting up Sentry.
   // debug: false,
-}
