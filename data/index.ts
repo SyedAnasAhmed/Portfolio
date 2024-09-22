@@ -84,6 +84,7 @@ export const projects = [
     ],
     link: "https://github.com/SyedAnasAhmed/AI_IMAGE_GENEREATOR-MERN.git",
   },
+
   {
     id: 2,
     title: "Project Management Dashboard",
